@@ -26,5 +26,4 @@ echo "Step 4: Copy the config file"
 yes | cp -rf config.py ./raspiot/config.py
 
 echo "Step 5: Starting RaspIoT..."
-cd ./raspiot
-python main.py
+screen -S raspiot -dm bash -c 'python ~/raspiot/main.py'
