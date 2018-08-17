@@ -16,14 +16,9 @@ cd ~
 echo "Step 1: Stop old RaspIoT screen session"
 screen -X -S raspiot quit
 
-echo "Step 2: Remove old Raspiot folder"
-rm -f -r raspiot 2> /dev/null
-
-echo "Step 3: Clone the last github version of RaspIoT"
-git clone https://github.com/phoeliok/raspiot.git
-
-echo "Step 4: Copy the config file"
-yes | cp -rf config.py ./raspiot/config.py
-
-echo "Step 5: Starting RaspIoT..."
+echo "Step 2: Starting RaspIoT..."
 screen -S raspiot -dm bash -c 'python ~/raspiot/main.py'
+
+if ! screen -list | grep -q "raspiot"; then
+    echo "Test"
+fi
