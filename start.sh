@@ -20,5 +20,5 @@ echo "Step 2: Starting RaspIoT..."
 screen -S raspiot -dm bash -c 'python ~/raspiot/main.py'
 
 if ! screen -list | grep -q "raspiot"; then
-    echo "Test"
+    echo "Error: Failed to launch RaspIOT"
 fi
