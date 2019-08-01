@@ -20,13 +20,13 @@ echo "Step 2: Remove old Raspiot folder"
 rm -f -r raspiot 2> /dev/null
 
 echo "Step 3: Clone the last github version of RaspIoT"
-git clone https://github.com/phoeliok/raspiot.git
+git clone https://github.com/algernhon/raspiot.git
 
 while [ $? -ne 0 ]
 do
     echo "Error: Git clone failed, retrying in 5sec..."
     sleep 5
-    git clone https://github.com/phoeliok/raspiot.git
+    git clone https://github.com/algernhon/raspiot.git
 done
 
 echo "Step 4: Copy the config file"
